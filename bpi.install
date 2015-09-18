@@ -147,6 +147,9 @@ function bpi_update_7004(&$sandbox) {
     $status = $record['status'];
     $timestamp = $record['timestamp'];
     $node = node_load($nid);
+    if (!$node) {
+      continue;
+    }
 
     // Create new transition and save it.
     $uid = $node->uid;
